@@ -1,16 +1,18 @@
-import './App.css'
-import image from "./assets/image.png"
-import RSVPForm from './rsvpForm'
+import { Routes, Route } from "react-router-dom";
+import Questions from "./pages/Questions";
+import Home from "./pages/Home";
+import RSVPForm from "./pages/RSVPForm";
+import FloatingMenu from "./FloatingMenu";
 
-function App() {
-
+export default function App() {
   return (
     <>
-      <h1>Johanna + Kevin = Sant</h1>
-      <img src={image} className="w-60 mx-auto mt-10" alt='Wedding'></img>
-      <RSVPForm/>
+      <FloatingMenu />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/osa" element={<RSVPForm />} />
+        <Route path="/faq" element={<Questions />} />
+      </Routes>
     </>
-  )
+  );
 }
-
-export default App
