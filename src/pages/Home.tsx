@@ -17,7 +17,7 @@ export default function Home() {
 
       {/* TEXT */}
       <div className="w-full lg:w-[40%] mt-[55vh] lg:mt-0 bg-white rounded-t-[2.5rem] z-10 relative p-8 flex flex-col items-center text-center space-y-4 shadow-md lg:rounded-none lg:min-h-screen lg:justify-center">
-        <h1 className="text-3xl sm:text-3xl font-semibold text-[#5C8DB5] font-cormorant">
+        <h1 className="text-3xl sm:text-3xl font-semibold text-[#de7987] font-cormorant">
           Johanna & Kevin
         </h1>
         <p className="text-gray-600">30 Augusti, 2025</p>
