@@ -43,13 +43,17 @@ const RSVPForm: React.FC = () => {
         body: JSON.stringify(form),
         headers: { "Content-Type": "text/plain;charset=utf-8" },
       });
+
       const text = await response.text();
-      if (text === "Success") {
+      console.log("Response text:", text);
+      const json = JSON.parse(text);
+      if (json.status === "success") {
         navigate("/osa/success");
       } else {
         navigate("/osa/error");
       }
-    } catch {
+    } catch (err) {
+      console.error("Failed to parse response", err);
       navigate("/osa/error");
     }
   };
