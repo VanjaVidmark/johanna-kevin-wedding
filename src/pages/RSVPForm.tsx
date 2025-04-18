@@ -45,9 +45,7 @@ const RSVPForm: React.FC = () => {
       });
 
       const text = await response.text();
-      console.log("Response text:", text);
-      const json = JSON.parse(text);
-      if (json.status === "success") {
+      if (text === "Success") {
         navigate("/osa/success");
       } else {
         navigate("/osa/error");
