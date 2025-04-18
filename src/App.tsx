@@ -2,16 +2,20 @@ import { Routes, Route } from "react-router-dom";
 import Questions from "./pages/Questions";
 import Home from "./pages/Home";
 import RSVPForm from "./pages/RSVPForm";
-import FloatingMenu from "./FloatingMenu";
+import Navbar from "./Navbar";
+import SuccessPage from "./pages/SuccessPage";
+import ErrorPage from "./pages/ErrorPage";
 
 export default function App() {
   return (
     <>
-      <FloatingMenu />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/osa" element={<RSVPForm />} />
         <Route path="/faq" element={<Questions />} />
+        <Route path="/osa/success" element={<SuccessPage />} />
+        <Route path="/osa/error" element={<ErrorPage />} />
       </Routes>
     </>
   );

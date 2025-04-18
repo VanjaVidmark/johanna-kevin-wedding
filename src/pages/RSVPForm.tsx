@@ -1,21 +1,27 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Player } from "@lottiefiles/react-lottie-player";
+import sendingAnimation from "../assets/sending.json";
+
 
 type RSVPFormData = {
   name: string;
-  email: string;
   attending: "ja" | "nej";
-  allergies?: string;
+  info?: string,
+  song?: string;
 };
 
 const RSVPForm: React.FC = () => {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState<RSVPFormData>({
     name: "",
-    email: "",
     attending: "ja",
-    allergies: "",
+    info: "",
+    song: "",
   });
 
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending">("idle");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -38,91 +44,106 @@ const RSVPForm: React.FC = () => {
         headers: { "Content-Type": "text/plain;charset=utf-8" },
       });
       const text = await response.text();
-      setStatus(text === "Success" ? "success" : "error");
+      if (text === "Success") {
+        navigate("/osa/success");
+      } else {
+        navigate("/osa/error");
+      }
     } catch {
-      setStatus("error");
+      navigate("/osa/error");
     }
   };
-  
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow space-y-5">
-      <h2 className="text-2xl font-bold text-center">OSA</h2>
+    <div className="w-screen flex justify-center px-4 py-12 mt-5 lg:items-center">
+      <form 
+        onSubmit={handleSubmit} 
+        className="max-w-lg w-full mx-auto p-6 bg-white rounded-lg shadow space-y-5">
+        <h2 className="text-2xl text-[#de7987] font-bold text-center">OSA</h2>
+        <p className="text-gray-600">Fyll i formuläret för att OSA. Svara senast XXX.</p>
+        <p className="text-gray-600">Samtpliga personer i sällskapet behöver OSA</p>
 
-      <div>
-        <label className="block font-medium mb-1">Namn *</label>
-        <input
-          type="text"
-          name="name"
-          required
-          value={form.name}
-          onChange={handleChange}
-          className="w-full border border-gray-300 p-2 rounded"
-        />
-      </div>
-
-      <div>
-        <label className="block font-medium mb-1">Email *</label>
-        <input
-          type="email"
-          name="email"
-          required
-          value={form.email}
-          onChange={handleChange}
-          className="w-full border border-gray-300 p-2 rounded"
-        />
-      </div>
-
-      <div>
-        <label className="block font-medium mb-1">Kan du komma? *</label>
-        <div className="flex justify-center gap-6 mt-1">
-          <label className="inline-flex items-center gap-2">
-            <input
-              type="radio"
-              name="attending"
-              value="ja"
-              checked={form.attending === "ja"}
-              onChange={() => handleRadioChange("ja")}
-            />
-            Yes
-          </label>
-          <label className="inline-flex items-center gap-2">
-            <input
-              type="radio"
-              name="attending"
-              value="nej"
-              checked={form.attending === "nej"}
-              onChange={() => handleRadioChange("nej")}
-            />
-            No
-          </label>
+        <div>
+          <label className="block font-medium mb-1">För- och efternamn *</label>
+          <input
+            type="text"
+            name="name"
+            required
+            value={form.name}
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded"
+          />
         </div>
-      </div>
 
-      <div>
-        <label className="block font-medium mb-1">Allergier eller matpreferenser</label>
-        <input
-          name="allergies"
-          value={form.allergies}
-          onChange={handleChange}
-          className="w-full border border-gray-300 p-2 rounded"
-        />
-      </div>
-      <div>
-        <label className="block font-medium mb-1">Nått annat? plusetta? plats för överigt meddelande?</label>
-      </div>
+        <div>
+          <label className="block font-medium mb-1">Kan du komma? *</label>
+          <div className="flex justify-center gap-6 mt-1">
+            <label className="inline-flex items-center gap-2">
+              <input
+                type="radio"
+                name="attending"
+                value="ja"
+                checked={form.attending === "ja"}
+                onChange={() => handleRadioChange("ja")}
+              />
+              Ja
+            </label>
+            <label className="inline-flex items-center gap-2">
+              <input
+                type="radio"
+                name="attending"
+                value="nej"
+                checked={form.attending === "nej"}
+                onChange={() => handleRadioChange("nej")}
+              />
+              Nej
+            </label>
+          </div>
+        </div>
 
-      <button
-        type="submit"
-        className="w-full bg-pink-600 rounded transition"
-        disabled={status === "sending"}
-      >
-        {status === "sending" ? "Skickar..." : "Skicka"}
-      </button>
+        <div>
+          <label className="block font-medium mb-1">Övrig information: </label>
+          <textarea
+            name="info"
+            value={form.info}
+            onChange={handleChange}
+            placeholder="Ange allergier och/eller annan viktig information tll brudparet"
+            rows={4}
+            className="w-full border border-gray-300 p-2 rounded"
+          />
+        </div>
 
-      {status === "success" && <p className="text-green-600 text-center mt-2">Tack för att du OSAt</p>}
-      {status === "error" && <p className="text-red-600 text-center mt-2">Nått gick fel, försök igen</p>}
-    </form>
+        <div>
+          <label className="block font-medium mb-1">Önskelåt? hur ska man formulera frågan?</label>
+          <input
+            name="song"
+            value={form.song}
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded"
+          />
+        </div>
+
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            className="w-1/2 rounded"
+            disabled={status === "sending"}
+          >
+            Skicka
+          </button>
+        </div>
+
+        {status === "sending" && (
+          <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center space-y-4">
+              <Player autoplay loop src={sendingAnimation} style={{ height: "100px", width: "100px" }} />
+              <p className="text-gray-700">Skickar...</p>
+            </div>
+          </div>
+        )}
+      </form>
+    </div>
+    
   );
 };
 

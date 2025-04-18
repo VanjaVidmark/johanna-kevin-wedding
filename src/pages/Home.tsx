@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <section className="min-h-screen flex flex-col lg:flex-row relative">
       {/* IMAGE */}
-      <div className="w-full h-[60vh] lg:w-[60%] lg:h-screen lg:relative fixed top-0 left-0 z-0 lg:z-10">
+      <div className="w-full h-[60vh] lg:w-[60%] lg:h-screen lg:relative fixed top-[7vh] left-0 z-0 lg:z-10">
         <img
           src={image}
           alt="Johanna & Kevin"
@@ -16,7 +16,7 @@ export default function Home() {
       </div>
 
       {/* TEXT */}
-      <div className="w-full lg:w-[40%] mt-[55vh] lg:mt-0 bg-white rounded-t-[2.5rem] z-10 relative p-8 flex flex-col items-center text-center space-y-4 shadow-md lg:rounded-none lg:min-h-screen lg:justify-center">
+      <div className="w-full lg:w-[40%] mt-[62vh] lg:mt-0 bg-white rounded-t-[2.5rem] z-10 relative p-8 flex flex-col items-center text-center space-y-4 shadow-md lg:rounded-none lg:min-h-screen lg:justify-center">
         <h1 className="text-3xl sm:text-3xl font-semibold text-[#de7987] font-cormorant">
           Johanna & Kevin
         </h1>
