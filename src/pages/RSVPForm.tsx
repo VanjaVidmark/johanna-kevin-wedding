@@ -57,13 +57,15 @@ const RSVPForm: React.FC = () => {
   };
 
   return (
-    <div className="w-screen flex justify-center px-4 py-12 mt-5 lg:items-center">
+    <div className="w-screen flex justify-center px-4 py-[10vh] mt-5 lg:items-center">
       <form 
         onSubmit={handleSubmit} 
         className="max-w-lg w-full mx-auto p-6 bg-white rounded-lg shadow space-y-5">
-        <h2 className="text-2xl text-[#de7987] font-bold text-center">OSA</h2>
-        <p className="text-gray-600">Fyll i formuläret för att OSA. Svara senast XXX.</p>
-        <p className="text-gray-600">Samtpliga personer i sällskapet behöver OSA</p>
+        <div className="space-y-2">
+          <h2 className="text-2xl text-[#de7987] font-bold text-center">OSA</h2>
+          <p className="text-gray-500">Fyll i formuläret för att OSA. Svara senast den 30 juni.</p>
+          <p className="text-gray-500">Anmäl varje person i sällskapet separat. </p>
+        </div>
 
         <div>
           <label className="block font-medium mb-1">För- och efternamn *</label>
@@ -109,14 +111,14 @@ const RSVPForm: React.FC = () => {
             name="info"
             value={form.info}
             onChange={handleChange}
-            placeholder="Ange allergier och/eller annan viktig information tll brudparet"
+            placeholder="Ange allergier och/eller annan viktig information till brudparet"
             rows={4}
             className="w-full border border-gray-300 p-2 rounded"
           />
         </div>
 
         <div>
-          <label className="block font-medium mb-1">Önskelåt? hur ska man formulera frågan?</label>
+          <label className="block font-medium mb-1">Denna låt är obligatorisk till dansgolvet: </label>
           <input
             name="song"
             value={form.song}

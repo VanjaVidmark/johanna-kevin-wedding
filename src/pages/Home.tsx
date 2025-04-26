@@ -16,26 +16,21 @@ export default function Home() {
       </div>
 
       {/* TEXT */}
-      <div className="w-full lg:w-[40%] mt-[62vh] lg:mt-0 bg-white rounded-t-[2.5rem] z-10 relative p-8 flex flex-col items-center text-center space-y-4 shadow-md lg:rounded-none lg:min-h-screen lg:justify-center">
-        <h1 className="text-3xl sm:text-3xl font-semibold text-[#de7987] font-cormorant">
+      <div className="w-full lg:w-[40%] mt-[62vh] lg:mt-0 bg-white rounded-t-[2.5rem] z-10 relative p-8 lg:px-20 flex flex-col items-center text-center space-y-4 lg:rounded-none lg:min-h-screen lg:justify-center">
+        <h1 className="text-3xl sm:text-2xl text-[#de7987]" style={{ fontFamily: "'Great Vibes'" }}>
           Johanna & Kevin
         </h1>
-        <p className="text-gray-600">30 Augusti, 2025</p>
-        <p className="text-gray-500">Själevads kyrka, etc, etc, ercx</p>
-        <p className="text-sm text-gray-500 max-w-md">
-          Du är välkommen på bröllop osv! Tänker att all viktig info kan komma om man bara scrollar ner här!
-        </p>
-        <p className="text-sm text-gray-500 max-w-md">vad mer?</p>
-        <p className="text-sm text-gray-500 max-w-md">tralalalala</p>
-        <div className="flex gap-4">
+        <p className="text-gray-500">Varmt välkomna till vårt bröllop den 30 augusti 2025! 🌸</p>
+        <p className="text-gray-500">Vigseln äger rum i Själevads kyrka kl 15. Därefter bjuder vi in till middag och fest på Själevads hembygdsgård 🥂</p>
+        <p className="text-gray-500">OSA senast den 30 juni. Anmäl varje person i sällskapet separat. </p>
+        <p className="text-gray-500">Tal och spex under kvällen uppskattas mycket! Anmäl görs till våra toastmasters Vanja och Ida på <a href="mailto:johannaochkevin4ever@gmail.com" className="!underline !text-blue-600">johannaochkevin4ever@gmail.com</a></p>
+        <div className="flex gap-4 pt-2">
           <button
-            className="border px-4 py-2 rounded hover:bg-gray-100 transition"
             onClick={() => navigate("/osa")}
           >
             OSA
           </button>
           <button
-            className="border px-4 py-2 rounded hover:bg-gray-100 transition"
             onClick={() => navigate("/faq")}
           >
             Frågor & Svar

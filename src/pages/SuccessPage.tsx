@@ -16,16 +16,17 @@ export default function SuccessPage() {
             src={successAnimation} 
             style={{ height: "140px", width: "140px" }} />
 
-            <h2 className="text-2xl font-bold mt-4 text-[#de7987]">Tack för att du OSAt!</h2>
+            <h2 className="text-2xl font-bold mt-4 text-[#de7987]">Din anmälan är skickad!</h2>
+            <p className="mt-2 text-gray-600">
+                Vill ni skriva nån hälsning här eller lämna tomt?
+            </p>
             <div className="flex justify-center items-center gap-4">
                 <button
-                    className="border px-4 py-2 rounded hover:bg-gray-100 transition"
                     onClick={() => navigate("/osa")}
                 >
                     OSA igen
                 </button>
                 <button
-                    className="border px-4 py-2 rounded hover:bg-gray-100 transition"
                     onClick={() => navigate("/faq")}
                 >
                     Frågor & Svar
