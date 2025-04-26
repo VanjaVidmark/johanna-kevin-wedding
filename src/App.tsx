@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Questions from "./pages/Questions";
 import Home from "./pages/Home";
 import RSVPForm from "./pages/RSVPForm";
@@ -16,6 +16,7 @@ export default function App() {
         <Route path="/faq" element={<Questions />} />
         <Route path="/osa/success" element={<SuccessPage />} />
         <Route path="/osa/error" element={<ErrorPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
   );
