@@ -23,7 +23,7 @@ export default function Home() {
         <p className="text-gray-500">Varmt välkomna till vårt bröllop den 30 augusti 2025! 🌸</p>
         <p className="text-gray-500">Vigseln äger rum i Själevads kyrka kl 15. Därefter bjuder vi in till middag och fest på Själevads hembygdsgård 🥂</p>
         <p className="text-gray-500">OSA senast den 30 juni. Anmäl varje person i sällskapet separat. </p>
-        <p className="text-gray-500">Tal och spex under kvällen uppskattas mycket! Anmäl görs till våra toastmasters Vanja och Ida på <a href="mailto:johannaochkevin4ever@gmail.com" className="!underline !text-blue-600">johannaochkevin4ever@gmail.com</a></p>
+        <p className="text-gray-500">Tal och spex under kvällen uppskattas mycket! Anmälan görs till våra toastmasters Vanja och Ida på <a href="mailto:johannaochkevin4ever@gmail.com" className="!underline !text-blue-600">johannaochkevin4ever@gmail.com</a></p>
         <div className="flex gap-4 pt-2">
           <button
             onClick={() => navigate("/osa")}
