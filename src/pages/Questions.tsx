@@ -12,7 +12,7 @@ export default function Questions() {
     <section className="w-full flex flex-col items-center px-6 py-[10vh] space-y-5">
       
       {/* Question 1 */}
-      <article className="w-full max-w-2xl bg-[#f0f1f3] rounded-xl shadow overflow-hidden">
+      <article className="w-full max-w-2xl bg-gray-100 rounded-xl shadow overflow-hidden">
         <header>
           <button
             onClick={() => setOpen1(!open1)}
@@ -27,7 +27,7 @@ export default function Questions() {
           </button>
         </header>
         {open1 && (
-          <div className="px-5 py-2 bg-[#f0f1f3] text-gray-700 space-y-2">
+          <div className="px-5 py-3 bg-gray-100 text-gray-700 space-y-2">
             <p> Själevads kyrka ligger på Hampnäsvägen 27 i Själevad ⛪ </p>
             <p> Hembygdsgården hittar ni på Hörnäsvägen 49, på andra sidan av Själevadsfjärden.</p>
           </div>
@@ -35,7 +35,7 @@ export default function Questions() {
       </article>
 
       {/* Question 2 */}
-      <article className="w-full max-w-2xl bg-[#f0f1f3] rounded-xl shadow overflow-hidden">
+      <article className="w-full max-w-2xl bg-gray-100 rounded-xl shadow overflow-hidden">
         <header>
           <button
             onClick={() => setOpen2(!open2)}
@@ -50,7 +50,7 @@ export default function Questions() {
           </button>
         </header>
         {open2 && (
-          <div className="px-5 py-2 bg-[#f0f1f3] text-gray-700">
+          <div className="px-5 py-3 bg-gray-100 text-gray-700">
             <p>
               Barn är varmt välkomna att vara med under vigseln och den efterföljande brudskålen.
               Under middagen och resten av kvällen är det barnfritt som gäller.
@@ -60,7 +60,7 @@ export default function Questions() {
       </article>
 
       {/* Question 3 */}
-      <article className="w-full max-w-2xl bg-[#f0f1f3] rounded-xl shadow overflow-hidden">
+      <article className="w-full max-w-2xl bg-gray-100 rounded-xl shadow overflow-hidden">
         <header>
           <button
             onClick={() => setOpen3(!open3)}
@@ -75,7 +75,7 @@ export default function Questions() {
           </button>
         </header>
         {open3 && (
-          <div className="px-5 py-2 bg-[#f0f1f3] text-gray-700">
+          <div className="px-5 py-3 bg-gray-100 text-gray-700">
             <p>
               Klädkoden är kavaj.
             </p>
@@ -84,7 +84,7 @@ export default function Questions() {
       </article>
 
       {/* Question 4 */}
-      <article className="w-full max-w-2xl bg-[#f0f1f3] rounded-xl shadow overflow-hidden">
+      <article className="w-full max-w-2xl bg-gray-100 rounded-xl shadow overflow-hidden">
         <header>
           <button
             onClick={() => setOpen4(!open4)}
@@ -99,14 +99,14 @@ export default function Questions() {
           </button>
         </header>
         {open4 && (
-          <div className="px-5 py-2 bg-[#f0f1f3] text-gray-700 space-y-2">
+          <div className="px-5 py-3 bg-gray-100 text-gray-700 space-y-2">
             <p>Att ni vill komma och fira med oss är allt vi önskar. Om ni ändå vill ni uppmärksamma vår dag med en gåva skulle vi uppskatta ett bidrag till vår bröllopsresa. </p>
             <p>Bidrag till resan kan swishas till vår toastmaster Vanja på nummer <a href="tel:+46722133920" className="!underline !text-blue-700">072-2133920</a>. </p>
           </div>
         )}
       </article>
 
-      <article className="w-full max-w-2xl bg-[#f0f1f3] rounded-xl shadow overflow-hidden">
+      <article className="w-full max-w-2xl bg-gray-100 rounded-xl shadow overflow-hidden">
         <header>
           <button
             onClick={() => setOpen5(!open5)}
@@ -121,7 +121,7 @@ export default function Questions() {
           </button>
         </header>
         {open5 && (
-          <div className="px-5 py-2 bg-[#f0f1f3] text-gray-700">
+          <div className="px-5 py-3 bg-gray-100 text-gray-700">
             <p>Självklart är respektive välkommen.</p>
           </div>
         )}

@@ -17,8 +17,8 @@ export default function ErrorPage() {
 
             <h2 className="text-2xl font-bold mt-4 text-[#de7987]">Något gick fel!</h2>
             <p className="mt-2 text-gray-600">
-                Kontakta <a href="mailto:vidmarkvanja@gmail.com" className="underline text-blue-600">vidmarkvanja@gmail.com</a> eller{" "}
-                <a href="tel:+46722133920" className="underline text-blue-600">072-2133920</a>
+                Kontakta <a href="mailto:vidmarkvanja@gmail.com" className="!underline !text-blue-600">vidmarkvanja@gmail.com</a> eller{" "}
+                <a href="tel:+46722133920" className="!underline !text-blue-600">072-2133920</a>
             </p>
             <div className="flex justify-center items-center">
                 <button

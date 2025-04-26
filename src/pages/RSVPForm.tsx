@@ -62,7 +62,6 @@ const RSVPForm: React.FC = () => {
         onSubmit={handleSubmit} 
         className="max-w-lg w-full mx-auto p-6 bg-white rounded-lg shadow space-y-5">
         <div className="space-y-2">
-          <h2 className="text-2xl text-[#de7987] font-bold text-center">OSA</h2>
           <p className="text-gray-500">Fyll i formuläret för att OSA. Svara senast den 30 juni.</p>
           <p className="text-gray-500">Anmäl varje person i sällskapet separat. </p>
         </div>
